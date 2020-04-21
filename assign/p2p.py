@@ -378,7 +378,7 @@ def main():
     stop_event = threading.Event()
 
     inp = threading.Thread(target=input_command, args=(node,stop_event,))
-    # why i have to put a comma here if i just pass in one argument? bcz () can't create tuple, you need ,
+    # why i have to put a comma here?
     sup = threading.Thread(target= node.send_ping)
     rup = threading.Thread(target= node.recv_ping)
     rtp = threading.Thread(target= node.tcp_lisn)
